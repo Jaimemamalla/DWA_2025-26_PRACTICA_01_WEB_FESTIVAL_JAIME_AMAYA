@@ -1,30 +1,57 @@
+
 /* VARIABLES */
 
-:root {
-    --bg: #060608; /*background */
-    --card: #0d0d10; /* cartas artistas */
-    --secunclr: #9aa0a6; /* color secundario */
-    --neon: #f7fbff; /*blanco neón*/
+:root{
+  --bg: #07020b;           
+  --panel: #0d0810;
+  --muted: #9a96a0;
+  --neon: #ffffff;
+  --accent-1: #b100ff; /* violeta */
+  --accent-2: #00b7ff; /* azul */
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --max-width: 1200px;
 
-
-    --fntsz: 16px; /* font size */
-    --hdr-fntsz: 72px; /* header font size */
-    --fucsia: #ff2d95;      /* fucsia */
-    --violeta: #8b3cff;      /* violeta */
+  --fs-base: 1rem;
+  --header-h: 4.25rem;
+  --shadow-neon: 0 6px 26px rgba(177,0,255,0.12), 0 0 40px rgba(0,183,255,0.06);
 }
 
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    color: var(--neon);
     text-decoration: none;
 }
 
-body {
-    margin: 0;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    font-size: var(--fntsz);
-    background:linear-gradient(180deg,var(--bg) 0%, #0a0a0b 100%);
-    
-    line-height:1.45;
+html,body{
+    height: 100%;
+    margin:0;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+    background: linear-gradient(180deg, var(--bg), #07051a);
+    color:var(--neon);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    font-size:var(--fs-base);
 }
+
+.logo-name {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bolder;
+    font-size: 2.4rem;
+    color: var(--neon);
+}
+
+.logo-sub {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: var(--neon);
+}
+
+
+
+
+
+
+
+
