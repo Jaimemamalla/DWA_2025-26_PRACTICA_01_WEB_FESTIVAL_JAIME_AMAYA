@@ -1,5 +1,30 @@
+/* VARIABLES */
+
+:root {
+    --bg: #060608; /*background */
+    --card: #0d0d10; /* cartas artistas */
+    --secunclr: #9aa0a6; /* color secundario */
+    --neon: #f7fbff; /*blanco neón*/
 
 
-/* * {
-    background-color: red;
-} */
+    --fntsz: 16px; /* font size */
+    --hdr-fntsz: 72px; /* header font size */
+    --fucsia: #ff2d95;      /* fucsia */
+    --violeta: #8b3cff;      /* violeta */
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: var(--neon);
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    font-size: var(--fntsz);
+    background:linear-gradient(180deg,var(--bg) 0%, #0a0a0b 100%);
+    
+    line-height:1.45;
+}
