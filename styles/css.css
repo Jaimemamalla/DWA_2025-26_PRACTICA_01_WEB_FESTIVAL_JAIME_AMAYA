@@ -176,14 +176,19 @@ html,body{
 }
 
 .artistas {
-    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
+    padding: 1rem 0;
 }
 
 .artistas img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;   
+    max-width: 1200px;
+    object-fit: contain;
 }
 
 /* FOOTER  */
@@ -335,8 +340,17 @@ html,body{
     .footer-links {
         gap: 1rem;
     }
-}
+    
+    .artistas {
+        padding: 0.5rem 1rem;
+    }
 
+    .artistas img {
+        width: 100%;
+        min-height: 80vw;
+        object-fit: cover;
+    }
+}
 
 
 
