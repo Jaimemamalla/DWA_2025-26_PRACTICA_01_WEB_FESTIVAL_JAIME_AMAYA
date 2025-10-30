@@ -10,6 +10,7 @@
   --glass: rgba(255,255,255,0.03);
   --radius: 12px;
   --max-width: 1200px;
+  --header-h: 4.25rem;
 
   --fs-base: 1rem;
   --header-h: 4.25rem;
@@ -151,12 +152,18 @@ html,body{
 
 h2 {
     padding: 1rem 2rem;
-    margin: 0 auto;
+    margin: 2rem auto;
     text-align: center;
-    width: 100%;
-    min-height: 100vh;
     scroll-margin-top: 6rem;
-    padding-top: 2rem;
+    font-size: 2rem;
+}
+
+section {
+    scroll-margin-top: calc(var(--header-h));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* LINE-UP SECTION */
@@ -170,7 +177,7 @@ h2 {
 }
 
 .artistas {
-    width: 100%;
+    width: 100%;    
     display: flex;
     justify-content: center;
     align-items: center;
