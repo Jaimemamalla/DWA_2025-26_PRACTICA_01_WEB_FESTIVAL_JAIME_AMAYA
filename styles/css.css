@@ -151,7 +151,7 @@ html,body{
 /* SECTIONS  */
 
 h2 {
-    /* padding: 1rem 2rem; */
+    padding: 1rem 2rem;
     margin: 2rem auto;
     text-align: center;
     scroll-margin-top: 6rem;
@@ -215,10 +215,6 @@ section {
 
 }
 
-.fecha span {
-    color: var(--vio);
-}
-
 .artistas-lista {
     list-style: none;
     padding: 0;
@@ -263,7 +259,7 @@ section {
     max-width: 1000px;
 }
 
-.fecha {
+.fecha-pr {
     font-size: 2rem;
     font-weight: 800;
     text-align: left;
@@ -271,15 +267,21 @@ section {
     margin-bottom: 2rem;
 }
 
-.fecha span {
-    color: var(--vio);
-}
-
 .escenarios {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
+}
+
+.artistaAZ:hover {
+    color: var(--azul);
+    transform: translateX(5px);
+}
+
+.artistaVIO:hover {
+    color: var(--vio);
+    transform: translateX(5px);
 }
 
 .escenario {
@@ -322,13 +324,13 @@ section {
 }
 
 .lista-horarios li span {
-  color: var(--azul);
+  /* color: var(--azul); */
   font-weight: 400;
   font-size: 0.9rem;
 }
 
 .lista-horarios li:hover {
-    color: var(--vio);
+    /* color: var(--vio); */
     transform: translateX(5px);
 }
 
@@ -625,7 +627,7 @@ section {
         white-space: nowrap;
     }
 
-    .fecha span {
+    .fecha-pr span {
         font-size: 1.4rem;
         color: var(--vio);
     }
@@ -643,7 +645,7 @@ section {
         font-size: 1rem;
     }
 
-    .fecha {
+    .fecha-pr {
         font-size: 1.5rem;
     }
 
