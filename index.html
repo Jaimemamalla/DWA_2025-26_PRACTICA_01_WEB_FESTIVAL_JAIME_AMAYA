@@ -58,40 +58,67 @@
                 <img src="images/artistas bsastrap.png" alt="artistas">
             </div>
         </div>
-
-        
-
     </section>
 
     <section>
         <div class="programa">
             <h2>PROGRAMA</h2>
+            <div class="horarios">
+                <img src="images/HORARIOS BSASTRAP.png" alt="horarios">
+            </div>
         </div>
     </section>
 
     <section id="entradas">
         <div class="entradas">
             <h2>ENTRADAS</h2>
-        </div>
-    </section>
 
-    <section id="info">
-        <div class="info" id="info">
-            <h2>INFO</h2>
-        </div>
-    </section>
+            <div class="tickets-container">
+                <div class="ticket-card">
+                <h3>Entrada Normal</h3>
+                <p>Acceso general al festival durante un día.</p>
+                <p class="price">50€</p>
+                <button class="btn-comprar" data-ticket="Entrada Normal">Comprar</button>
+            </div>
 
-    <section>
-        <div class="sponsors">
-            <h2>PATROCINADORES</h2>
-        </div>
-    </section>
+            <div class="ticket-card">
+                <h3>Entrada VIP</h3>
+                <p>Zona VIP + 2 Bebidas.</p>
+                <p class="price">90€</p>
+                <button class="btn-comprar" data-ticket="Entrada VIP">Comprar</button>
+            </div>
 
-    <section id="contacto">
-        <div class="contacto">
-            <h2>CONTACTO</h2>
+            <div class="ticket-card">
+                <h3>Full Pass</h3>
+                <p>Acceso completo a los 2 días + zona VIP + merchandising.</p>
+                <p class="price">150€</p>
+                <button class="btn-comprar" data-ticket="Full Pass">Comprar</button>
+            </div>
         </div>
-    </section>
+    </div>
+
+  <!-- Modal de pago -->
+  <div id="modal-pago" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Compra de entrada</h3>
+      <p id="ticket-seleccionado"></p>
+
+      <form id="form-pago">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" required>
+
+        <label for="tarjeta">Número de tarjeta</label>
+        <input type="text" id="tarjeta" maxlength="16" required>
+
+        <button type="submit" class="btn-pagar">Finalizar compra</button>
+      </form>
+    </div>
+  </div>
+</section>
     
         <footer class="main-footer">
             <div class="footer-container">
@@ -102,7 +129,7 @@
                 <div class="footer-right">
                     <div class="footer-socials">
                         <a href="#">
-                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-spotify"></i>
                         </a>
                         <a href="#">
                             <i class="fab fa-instagram"></i>
@@ -112,6 +139,9 @@
                         </a>
                         <a href="#">
                             <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
