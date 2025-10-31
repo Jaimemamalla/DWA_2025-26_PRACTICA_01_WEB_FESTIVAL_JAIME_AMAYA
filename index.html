@@ -171,47 +171,53 @@
                 <h3>Entrada Normal</h3>
                 <p>Acceso general al festival durante un día.</p>
                 <p class="price">50€</p>
-                <button class="btn-comprar" data-ticket="Entrada Normal">Comprar</button>
+                <button class="btn-comprar" data-ticket="Entrada Normal" id="openModal">Comprar Entrada Normal</button>
+
             </div>
 
             <div class="ticket-card">
                 <h3>Entrada VIP</h3>
                 <p>Zona VIP + 2 Bebidas.</p>
                 <p class="price">90€</p>
-                <button class="btn-comprar" data-ticket="Entrada VIP">Comprar</button>
+                <button class="btn-comprar" data-ticket="Entrada VIP">Comprar Entrada VIP</button>
+
             </div>
 
             <div class="ticket-card">
                 <h3>Full Pass</h3>
                 <p>Acceso completo a los 2 días + zona VIP + merchandising.</p>
                 <p class="price">150€</p>
-                <button class="btn-comprar" data-ticket="Full Pass">Comprar</button>
+                <button class="btn-comprar" data-ticket="Full Pass">Comprar Full Pass</button>
+
             </div>
         </div>
 
-
-        <!-- Modal de pago -->
-        <div id="modal-pago" class="modal">
+        <!-- Ventana Modal -->
+        <div id="modalWindow" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h3>Compra de entrada</h3>
-                <p id="ticket-seleccionado"></p>
+                <h3 id="ticket-seleccionado">Has seleccionado:</h3>
 
                 <form id="form-pago">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" required>
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" required>
 
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" required>
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" required>
 
-                    <label for="tarjeta">Número de tarjeta</label>
-                    <input type="text" id="tarjeta" maxlength="16" required>
+                <label for="cantidad">Cantidad de entradas</label>
+                <input type="number" id="cantidad" min="1" max="10" value="1" required>
 
-                    <button type="submit" class="btn-pagar">Finalizar compra</button>
+                <p class="precio-total">Total: <span id="precio-total">0€</span></p>
+
+                <label for="tarjeta">Número de tarjeta</label>
+                <input type="text" id="tarjeta" maxlength="16" required>
+
+                <button type="submit" id="closeModalAccept" class="btn-pagar">Finalizar compra</button>
                 </form>
             </div>
         </div>
-    </section>
+
     
         <footer class="main-footer">
             <div class="footer-container">

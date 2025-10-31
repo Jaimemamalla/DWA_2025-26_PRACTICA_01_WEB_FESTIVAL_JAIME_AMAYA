@@ -11,35 +11,66 @@ burger.addEventListener('click', () => {
 
 //MODAL 
 
-// MODAL PAGO
-const modal = document.getElementById('modal-pago');
-const closeModal = document.querySelector('.close');
-const ticketTexto = document.getElementById('ticket-seleccionado');
-const formPago = document.getElementById('form-pago');
+let btnsOpenModal = document.querySelectorAll(".btn-comprar");
+let modalWindow = document.querySelector("#modalWindow");
+let btnCloseModal = document.querySelector("#modalWindow > .modal-content > .close");
+let btnCloseModalAccept = document.querySelector("#modalWindow > .modal-content > #closeModalAccept");
+let ticketTexto = document.querySelector("#ticket-seleccionado");
+let cantidadInput = document.querySelector("#cantidad");
+let precioTotal = document.querySelector("#precio-total");
 
-// ABRIR MODAL
-document.querySelectorAll('.btn-comprar').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const tipo = btn.dataset.ticket;
-    ticketTexto.textContent = `Has seleccionado: ${tipo}`;
-    modal.style.display = 'flex';
+// Mapeo de precios
+const precios = {
+  "Entrada Normal": 50,
+  "Entrada VIP": 90,
+  "Full Pass": 150
+};
+
+let tipoSeleccionado = null;
+
+// Asignar evento a todos los botones "Comprar"
+btnsOpenModal.forEach(function(boton) {
+  boton.addEventListener("click", function() {
+      tipoSeleccionado = boton.dataset.ticket;
+      openModalWindow();
   });
 });
 
-// CERRAR MODAL
-closeModal.addEventListener('click', () => {
-  modal.style.display = 'none';
+// Función para abrir ventana modal
+function openModalWindow() {
+  ticketTexto.textContent = `Has seleccionado: ${tipoSeleccionado}`;
+  cantidadInput.value = 1;
+  actualizarPrecio();
+  modalWindow.classList.add("show-modal");
+}
+
+// Función para cerrar ventana modal
+function closeModalWindow() {
+  modalWindow.classList.remove("show-modal");
+}
+
+// Cerrar con la X o al confirmar pago
+btnCloseModal.addEventListener("click", closeModalWindow);
+btnCloseModalAccept.addEventListener("click", function(event) {
+  event.preventDefault();
+  const cantidad = parseInt(cantidadInput.value);
+  const total = precios[tipoSeleccionado] * cantidad;
+  alert(`🎟️ Compra realizada:\n${cantidad} x ${tipoSeleccionado}\nTotal: ${total}€`);
+  closeModalWindow();
 });
 
-// CERRAR AL HACER CLICK FUERA DEL MODAL
-window.addEventListener('click', e => {
-  if (e.target === modal) modal.style.display = 'none';
+// Cerrar ventana modal al hacer clic fuera
+window.addEventListener("click", function(event) {
+  if (event.target == modalWindow) {
+      closeModalWindow();
+  }
 });
 
-// OKEY DE COMPRA
-formPago.addEventListener('submit', e => {
-  e.preventDefault();
-  alert('¡Compra realizada con éxito! 🎟️');
-  modal.style.display = 'none';
-  formPago.reset();
-});
+// Actualizar el precio al cambiar cantidad
+cantidadInput.addEventListener("input", actualizarPrecio);
+
+function actualizarPrecio() {
+  const cantidad = parseInt(cantidadInput.value) || 1;
+  const total = precios[tipoSeleccionado] * cantidad;
+  precioTotal.textContent = `${total}€`;
+}
