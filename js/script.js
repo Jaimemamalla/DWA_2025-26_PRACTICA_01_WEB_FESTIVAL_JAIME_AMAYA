@@ -10,3 +10,14 @@ burger.addEventListener('click', () => {
 });
 
 //MODAL 
+
+
+//CONTADOR CARACTERES FORMULARIO
+let mensaje = document.getElementById("mensaje");
+let contador = document.getElementById("contador");
+
+mensaje.addEventListener("input", function() {
+  let actual = mensaje.value.length;
+  contador.textContent = actual + " / 300";
+});
+

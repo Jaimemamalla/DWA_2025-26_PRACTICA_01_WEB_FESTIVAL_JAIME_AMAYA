@@ -7,6 +7,9 @@
     <link rel="icon" href="images/logo bstrap negro.png" type="image/png">
     <link rel="stylesheet" href="styles/css.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="main-hdr">
@@ -20,12 +23,12 @@
                 </li>
                 <div class="nav-links">
                     <li><a href="#Line-Up">Artistas</a></li>
+                    <li><a href="#programa">Programa</a></li>
                     <li><a href="#entradas">Entradas</a></li>
                     <li><a href="#info">Info</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
                 </div>
 
-                <!-- Menú hamburguesa -->
+                <!-- MENU HAM -->
                 <div class="burger">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -44,12 +47,11 @@
         </div>
     </section>
 
-
     <section id="Line-Up">
         <div class="line-up">
             <h2>ARTISTAS</h2>
             <div class="dias-container">
-                <!-- Día 1 -->
+                <!-- D1 -->
                 <div class="dia-card">
                     <div class="dia-header">
                         <h3 class="fecha">VIERNES <span>21</span></h3>
@@ -71,7 +73,7 @@
                     </ul>
                 </div>
 
-                <!-- Día 2 -->
+                <!-- D2 -->
                 <div class="dia-card">
                     <div class="dia-header">
                         <h3 class="fecha">SÁBADO <span>22</span></h3>
@@ -102,7 +104,7 @@
             <h2>PROGRAMA</h2>
 
             <div class="dias-programa">
-                <!-- Viernes -->
+                <!-- VIERNES -->
                 <div class="dia-card">
                     <h3 class="fecha-pr">VIERNES <span>21</span></h3>
                     <div class="escenarios">
@@ -133,7 +135,7 @@
                     </div>
                 </div>
 
-                <!-- Sábado -->
+                <!-- SÁBADO -->
                 <div class="dia-card">
                     <h3 class="fecha-pr">SÁBADO <span>22</span></h3>
                     <div class="escenarios">
@@ -201,31 +203,33 @@
             </div>
         </div>
 
-        <!-- Ventana Modal -->
+        <!-- MODAL -->
         <div id="modalWindow" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
-                <h3 id="ticket-seleccionado">Has seleccionado:</h3>
+                <h2>Compra de Entradas</h2>
 
                 <form id="form-pago">
+                    <p id="ticket-seleccionado">Has seleccionado:</p>
+
                     <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" required>
+                    <input type="text" id="nombre" name="nombre" required>
 
                     <label for="email">Correo electrónico</label>
-                    <input type="email" id="email" required>
+                    <input type="email" id="email" name="email" required>
 
                     <label for="cantidad">Cantidad de entradas</label>
-                    <input type="number" id="cantidad" min="1" max="10" value="1" required>
+                    <input type="number" id="cantidad" name="cantidad" min="1" max="10" value="1" required>
 
-                    <p class="precio-total">Total: <span id="precio-total">0€</span></p>
+                    <p class="precio-total">Total: <span id="precio-total">0 ARG$</span></p>
 
-                    <label for="tarjeta">Número de tarjeta</label>
-                    <input type="text" id="tarjeta" maxlength="16" required>
-
-                    <button type="submit" id="closeModalAccept" class="btn-pagar">Finalizar compra</button>
+                    <button type="submit" id="closeModalAccept" class="btn-pagar">
+                        Finalizar compra
+                    </button>
                 </form>
             </div>
         </div>
+
 
     </section>
 
@@ -237,14 +241,34 @@
             </div>
 
             <div class="ubi">
-                <iframe src="https://www.google.com/maps/embed?pb=..." allowfullscreen=""loading="lazy"referrerpolicy="no-referrer-when-downgrade"></iframe>            
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6562.493227696301!2d-58.45581345235187!3d-34.67372481824936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccbf0fc1dd0e9%3A0x565d4c2fcbf1d5e0!2sParque%20de%20la%20Ciudad!5e0!3m2!1ses!2ses!4v1762298820042!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
             <div>
                 <h5>Parque de la Ciudad, Villa Soldati, Buenos Aires.</h5>
             </div>
+
+            <!-- FORM -->
+            <div class="formulario-info">
+                <h3>¿Tienes alguna duda? ¡Escríbenos!</h3>
+                <form id="form-info">
+                    <label for="nombreInfo">Nombre completo</label>
+                    <input type="text" id="nombreInfo" required>
+
+                    <label for="emailInfo">Correo electrónico</label>
+                    <input type="email" id="emailInfo" required>
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" rows="5" maxlength="300" required></textarea>
+                    <small id="contador">0 / 300</small>
+
+                    <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                </form>
+                <p id="info-confirm" class="confirm-msg"></p>
+            </div>
         </div>
     </section>
+
 
 
     <footer class="main-footer">
