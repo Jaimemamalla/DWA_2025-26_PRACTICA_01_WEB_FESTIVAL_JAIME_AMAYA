@@ -147,6 +147,7 @@ input, select {
     background: var(--vio);
     border-color: var(--vio);
     color: #fff;
+    margin-top: 2rem;
 }
 
 .btn--primary:hover {
@@ -214,6 +215,7 @@ input, select {
     justify-content: space-between;
     margin: .75rem 0;
     font-size: 1rem;
+    gap: 2rem;
 }
 
 .summary__field--total {
@@ -226,6 +228,99 @@ input, select {
     font-size: .9rem;
     color: rgba(255,255,255,0.7);
 }
+
+/* --- ENTRADAS INTERACTIVAS --- */
+.entradas {
+    text-align: center;
+    max-width: 900px;
+    margin: auto;
+}
+
+.entradas__fecha {
+    background: var(--panel);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: var(--radius);
+    box-shadow: 0 0 25px rgba(177, 0, 255, 0.15);
+}
+
+.entradas__fecha h3 {
+    color: var(--azul);
+    margin-bottom: 1.5rem;
+    }
+
+.entradas__fila {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: var(--radius);
+}
+
+.entradas__tipo {
+    flex: 1;
+    text-align: left;
+    font-weight: 600;
+}
+
+.entradas__precio {
+    width: 140px;
+    text-align: right;
+    color: var(--vio);
+}
+
+.entradas__controles {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.entradas__btn {
+    background: var(--vio);
+    border: none;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.entradas__btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.entradas__summary {
+    background: var(--panel);
+    padding: 2rem;
+    margin-top: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 0 25px rgba(0, 183, 255, 0.15);
+}
+
+.entradas__summary-items {
+    margin: 1rem 0;
+    text-align: left;
+}
+
+.entradas__summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.entradas__summary-total {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--azul);
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* FOOTER */
 .main-footer {
@@ -286,12 +381,56 @@ input, select {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .checkout__content {
+    .checkout__content {
         flex-direction: column;
     }
 
-  .checkout__right {
+    .checkout__right {
         width: 100%;
         margin-top: 2rem;
+    }
+
+    .burger {
+        display: block;
+        position: relative;
+        z-index: 2000;
+        cursor: pointer;
+        font-size: 2rem;
+        color: var(--neon)
+    }
+
+    .navbar {
+        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+        background: rgba(7, 2, 11, 1);
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        z-index: 1500;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .nav-links li a {
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-align: center;
+        color: var(--neon);
+        padding: .25rem .5rem;
     }
 }
