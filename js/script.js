@@ -26,7 +26,7 @@ botonesComprar.forEach(function(boton) {
     let tipoEntrada = boton.getAttribute("data-ticket");
 
     tituloModal.textContent = "Confirmar compra - " + tipoEntrada;
-    textoModal.textContent = 'Estás a punto de comprar la "' + tipoEntrada + '". ¿Querés continuar al pago?';
+    textoModal.textContent = 'Estás a punto de comprar la "' + tipoEntrada + '". ¿Quieres continuar al pago?';
 
     //MODAL ON
     modal.style.display = "flex";
