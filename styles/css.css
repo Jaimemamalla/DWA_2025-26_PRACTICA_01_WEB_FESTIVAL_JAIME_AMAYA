@@ -218,70 +218,75 @@ section {
 }
 
 /* LINE-UP SECTION */
-.line-up {
+#line-up,
+#Line-Up {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     padding: 5rem 2rem;
-    gap: 3rem;
+}
+
+.lineup-container {
+    width: 100%;
+    max-width: 1100px;
     text-align: center;
 }
 
-.dias-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    gap: 5rem;
-    width: 100%;
-    max-width: 1000px;
+.lineup-container h2 {
+    margin-bottom: 3rem;
+}
+
+/* Recurso de chatGPT para hacer los dos bloques iguales (he tenido unos cuanto problemas con eso) */
+.dias-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
 }
 
 .dia-card {
-    background: var(--panel);
+    background: #0d0810;
+    border-radius: 12px;
+    padding: 3rem 2rem;
     box-shadow: 0 0 25px rgba(177, 0, 255, 0.2);
-    border-radius: var(--radius);
-    padding: 8rem;
-    width: 100%;
-    max-width: 450px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.dia-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 40px rgba(0, 183, 255, 0.25);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 550px;
 }
 
 .dia-header {
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255,255,255,0.1);
     padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .fecha {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--neon);
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
 
+.fecha span {
+    color: #b100ff;
+    font-size: 2.4rem;
 }
 
 .artistas-lista {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     text-align: left;
-    line-height: 2.5rem;
 }
 
 .artistas-lista li {
-    font-weight: 900;
-    font-size: 2rem;
-    color: var(--neon);
-    transition: color 0.3s ease, transform 0.2s ease;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 0.3rem 0;
+    transition: transform .2s ease, color .2s ease;
 }
 
 .artistas-lista li:hover {
-    color: var(--azul);
+    color: #00b7ff;
     transform: translateX(5px);
 }
 
@@ -319,7 +324,7 @@ section {
     border-radius: var(--radius);
     box-shadow: var(--shadow-neon);
     padding: 3rem;
-    width: 95%;
+    width: 100%;
     max-width: 1000px;
 }
 
@@ -783,13 +788,22 @@ section {
         object-fit: cover;
     }
 
-    .dias-container {
-        flex-direction: column;
-        align-items: center;
+    .dias-grid {
+        grid-template-columns: 1fr;
     }
 
-    .dia-card {
-        flex-wrap: wrap;
+  .dia-card {
+        min-height: auto;
+    }
+
+  .fecha {
+        display: flex;
+        gap: .4rem;
+        align-items: baseline;
+    }
+
+  .artistas-lista li {
+        font-size: 1.3rem;
     }
 
     .fecha {
