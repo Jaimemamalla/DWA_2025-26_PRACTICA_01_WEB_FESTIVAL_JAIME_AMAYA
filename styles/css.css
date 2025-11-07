@@ -792,17 +792,17 @@ section {
         grid-template-columns: 1fr;
     }
 
-  .dia-card {
+    .dia-card {
         min-height: auto;
     }
 
-  .fecha {
+    .fecha {
         display: flex;
         gap: .4rem;
         align-items: baseline;
     }
 
-  .artistas-lista li {
+    .artistas-lista li {
         font-size: 1.3rem;
     }
 
